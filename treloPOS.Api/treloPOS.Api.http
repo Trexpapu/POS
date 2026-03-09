@@ -1,0 +1,6 @@
+@treloPOS.Api_HostAddress = http://localhost:5073
+
+GET {{treloPOS.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
