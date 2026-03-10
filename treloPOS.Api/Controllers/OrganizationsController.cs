@@ -6,6 +6,7 @@ namespace treloPOS.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Produces("application/json")]
 public class OrganizationsController : ControllerBase
 {
     private readonly IOrganizationService _organizationService;
@@ -15,7 +16,14 @@ public class OrganizationsController : ControllerBase
         _organizationService = organizationService;
     }
 
+    /// <summary>
+    /// Registra una nueva organización junto con su usuario administrador.
+    /// </summary>
+    /// <param name="request">Datos de la organización y del administrador.</param>
+    /// <returns>La organización y el administrador creados.</returns>
     [HttpPost("register")]
+    [ProducesResponseType(typeof(CreateOrganizationResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Register([FromBody] CreateOrganizationRequest request)
     {
         try
