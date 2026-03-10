@@ -1,13 +1,14 @@
-// Usings que ya teníamos
 // Usings para la base de datos
 using Microsoft.EntityFrameworkCore;
-// Usings para los repositorios e interfaces
-using treloPOS.Application.Interfaces.Repositories;
+// Usings para repositorios (agrupados por dominio)
+using treloPOS.Application.Interfaces.Repositories.Identity;
+using treloPOS.Application.Interfaces.Repositories.Organizations;
 using treloPOS.Application.Interfaces.Security;
-using treloPOS.Application.Interfaces.Services;
-using treloPOS.Application.Services;
+using treloPOS.Application.Interfaces.Services.Organizations;
+using treloPOS.Application.Services.Organizations;
 using treloPOS.Infrastructure.Data;
-using treloPOS.Infrastructure.Repositories;
+using treloPOS.Infrastructure.Repositories.Identity;
+using treloPOS.Infrastructure.Repositories.Organizations;
 using treloPOS.Infrastructure.Security;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,12 +26,14 @@ builder.Services.AddScoped<IPasswordHasher, BcryptPasswordHasher>();
 builder.Services.AddDbContext<TreloPosDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Repositorios
+// Repositorios - Organizations
 builder.Services.AddScoped<IOrganizationRepository, OrganizationRepository>();
+
+// Repositorios - Identity
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 
-// Servicios de aplicación
+// Servicios de aplicación - Organizations
 builder.Services.AddScoped<IOrganizationService, OrganizationService>();
 
 // ¡Todo se debe registrar antes de esta línea!

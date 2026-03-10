@@ -1,4 +1,4 @@
-namespace treloPOS.Application.DTOs;
+namespace treloPOS.Application.DTOs.Organizations;
 
 public class CreateOrganizationResponse
 {

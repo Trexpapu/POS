@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace treloPOS.Application.DTOs;
+namespace treloPOS.Application.DTOs.Organizations;
 
 public class CreateOrganizationRequest
 {

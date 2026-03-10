@@ -1,6 +1,6 @@
 using treloPOS.Domain.Entities;
 
-namespace treloPOS.Application.Interfaces.Repositories;
+namespace treloPOS.Application.Interfaces.Repositories.Identity;
 
 public interface IRoleRepository
 {

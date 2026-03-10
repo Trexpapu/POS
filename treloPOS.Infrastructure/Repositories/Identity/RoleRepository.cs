@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using treloPOS.Application.Interfaces.Repositories;
+using treloPOS.Application.Interfaces.Repositories.Identity;
 using treloPOS.Domain.Entities;
 using treloPOS.Infrastructure.Data;
 
-namespace treloPOS.Infrastructure.Repositories;
+namespace treloPOS.Infrastructure.Repositories.Identity;
 
 public class RoleRepository : IRoleRepository
 {

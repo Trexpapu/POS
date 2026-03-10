@@ -1,11 +1,12 @@
-using treloPOS.Application.DTOs;
-using treloPOS.Application.Interfaces.Repositories;
+using treloPOS.Application.DTOs.Organizations;
+using treloPOS.Application.Interfaces.Repositories.Identity;
+using treloPOS.Application.Interfaces.Repositories.Organizations;
 using treloPOS.Application.Interfaces.Security;
-using treloPOS.Application.Interfaces.Services;
+using treloPOS.Application.Interfaces.Services.Organizations;
 using treloPOS.Domain.Constants;
 using treloPOS.Domain.Entities;
 
-namespace treloPOS.Application.Services;
+namespace treloPOS.Application.Services.Organizations;
 
 public class OrganizationService : IOrganizationService
 {
@@ -33,7 +34,7 @@ public class OrganizationService : IOrganizationService
         }
 
         // 2. Crear la organización
-        var organization = new Organizations
+        var organization = new Domain.Entities.Organizations
         {
             Name = request.OrganizationName
         };

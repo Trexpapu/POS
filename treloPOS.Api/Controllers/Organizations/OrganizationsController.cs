@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using treloPOS.Application.DTOs;
-using treloPOS.Application.Interfaces.Services;
+using treloPOS.Application.DTOs.Organizations;
+using treloPOS.Application.Interfaces.Services.Organizations;
 
-namespace treloPOS.Api.Controllers;
+namespace treloPOS.Api.Controllers.Organizations;
 
 [ApiController]
 [Route("api/[controller]")]
