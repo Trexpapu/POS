@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using treloPOS.Application.Interfaces.Repositories.Identity;
 using treloPOS.Application.Interfaces.Repositories.Organizations;
 using treloPOS.Application.Interfaces.Security;
+using treloPOS.Application.Interfaces.Services.Identity;
 using treloPOS.Application.Interfaces.Services.Organizations;
+using treloPOS.Application.Services.Identity;
 using treloPOS.Application.Services.Organizations;
 using treloPOS.Infrastructure.Data;
 using treloPOS.Infrastructure.Repositories.Identity;
@@ -35,7 +37,9 @@ builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 
 // Servicios de aplicación - Organizations
 builder.Services.AddScoped<IOrganizationService, OrganizationService>();
-
+// Token y Autenticación
+builder.Services.AddScoped<IJwtProvider, JwtProvider>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 // ¡Todo se debe registrar antes de esta línea!
 var app = builder.Build();
 
